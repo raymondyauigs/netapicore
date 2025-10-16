@@ -1,0 +1,6 @@
+@dotapiBase.Core_HostAddress = http://localhost:5210
+
+GET {{dotapiBase.Core_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
