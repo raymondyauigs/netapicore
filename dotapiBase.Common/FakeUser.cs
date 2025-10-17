@@ -1,6 +1,6 @@
-﻿using Microsoft.AspNetCore.Http.HttpResults;
+﻿
 
-namespace dotapiBase.Core.Model
+namespace dotapiBase.Common
 {
     public class FakeUser: IUser
     {

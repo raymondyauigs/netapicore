@@ -1,4 +1,4 @@
-﻿namespace dotapiBase.Core.Model
+﻿namespace dotapiBase.Common
 {
     public class AuthSetting
     {
@@ -9,5 +9,8 @@
 
         public List<string> CorsHosts { get; set; } = new List<string>();
 
+        public List<string> CmdFilePaths { get; set;} = new List<string>();
+
+        public List<string> OutFilePaths { get; set; } = new List<string>();    
     }
 }

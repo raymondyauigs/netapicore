@@ -1,7 +1,7 @@
 ﻿using System.Security.Cryptography;
 using System.Text;
 
-namespace dotapiBase.Core.Utils
+namespace dotapiBase.Common.Utils
 {
     public class StringEncrypService
     {

@@ -1,5 +1,4 @@
-﻿using dotapiBase.Core.Model;
-using Microsoft.AspNetCore.Identity;
+﻿using dotapiBase.Common;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System.Globalization;
@@ -7,9 +6,9 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 
-namespace dotapiBase.Core.Utils
+namespace dotapiBase.Common.Utils
 {
-    public class TokenService
+    public class TokenService:ITokenService
     {
         private readonly string _secret;
         private readonly string _issuer;

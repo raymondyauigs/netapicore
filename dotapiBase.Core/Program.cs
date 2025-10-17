@@ -1,5 +1,7 @@
+using dotapiBase.Common;
 using dotapiBase.Core.Model;
-using dotapiBase.Core.Utils;
+using dotapiBase.Common.Utils;
+using dotapiBase.DocUtils;
 
 var builder = WebApplication.CreateBuilder(args);
 var authsetting = builder.Configuration.GetSection(Constants.WebKey.AuthSetting.ToNameString()!);
@@ -7,8 +9,9 @@ var encryptionService = new StringEncrypService();
 authsetting[nameof(AuthSetting.Secret)] = encryptionService.EncryptString(authsetting[nameof(AuthSetting.SecretKey)] ?? "");
 
 builder.Services.Configure<AuthSetting>(authsetting);
-
-
+builder.Services.AddSingleton(_ => new StringEncrypService());
+builder.Services.AddSingleton(_ => new ConvertHelper());
+builder.Services.AddScoped<ITokenService, TokenService>();
 
 // Add services to the container.
 

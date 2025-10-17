@@ -1,4 +1,5 @@
-﻿using dotapiBase.Core.Model;
+﻿using dotapiBase.Common;
+using dotapiBase.Core.Model;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 using System.Text.Json;

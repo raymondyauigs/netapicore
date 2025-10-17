@@ -1,4 +1,4 @@
-namespace dotapiBase.Core
+namespace dotapiBase.Common
 {
     public class WeatherForecast
     {

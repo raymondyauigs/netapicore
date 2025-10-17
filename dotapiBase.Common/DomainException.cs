@@ -1,4 +1,4 @@
-﻿namespace dotapiBase.Core.Model
+﻿namespace dotapiBase.Common
 {
     public class DomainException : Exception
     {
