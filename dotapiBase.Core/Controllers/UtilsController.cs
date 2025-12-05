@@ -30,7 +30,7 @@ namespace dotapiBase.Core.Controllers
             var targetIndex = itSetting.CmdTargets.FindIndex(e => e == target);
             if(targetIndex <0)
             {
-                return new Result { Success = false, ErrorMessage = $"Target '{target}' is not supported." };
+                throw new DomainException($"Target '{target}' is not supported.", "504");
             }
             cmdfile = Path.Combine(itSetting.CmdFilePaths[targetIndex], filename);
 
@@ -46,12 +46,8 @@ namespace dotapiBase.Core.Controllers
 
                 return result;
             }
-            
-            result.ErrorMessage = converted.FirstError.ToString();
 
-            //itlogger.LogError("Convert file error:{0}", error);
-
-            return result;
+            return new Result { ErrorMessage = converted.FirstError.ToString(), Success = false };
 
         }
         [HttpGet("download")]

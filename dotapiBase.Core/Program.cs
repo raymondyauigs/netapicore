@@ -5,6 +5,7 @@ using dotapiBase.DocUtils;
 using Serilog;
 using Microsoft.AspNetCore.Http.Features;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
+using dotapiBase.Core.Middleware;
 
 /*Bootstrap logger
  */
@@ -88,6 +89,8 @@ builder.Services.AddCors(options =>
 
 
 var app = builder.Build();
+
+app.UseApiExceptionHandler();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
