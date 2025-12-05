@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="BootlegRealists.DocxToPdf" Version="1.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\dotapiBase.Common\dotapiBase.Common.csproj" />
   </ItemGroup>
 

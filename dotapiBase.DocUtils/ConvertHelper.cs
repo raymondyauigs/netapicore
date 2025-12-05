@@ -1,13 +1,18 @@
 ﻿
 
 
+
+
+using BootlegRealists.Reporting;
+
 namespace dotapiBase.DocUtils
 {
     public class ConvertHelper
     {
+        
         public ConvertHelper()
         {
-
+            
 
 
         }
@@ -25,6 +30,12 @@ namespace dotapiBase.DocUtils
                         if (string.IsNullOrEmpty(line))
                             continue;
                         cmdinout = line.Split('|').ToList();
+
+                        using var docxStream = new FileStream(cmdinout[0], FileMode.Open, FileAccess.Read, FileShare.Read);
+                        using var pdfStream = new FileStream(cmdinout[1], FileMode.Create, FileAccess.Write, FileShare.Write);
+                        var docxToPdf = new DocxToPdf();
+                        var runProperties = new Dictionary<string, string> { ["Title"] = "title", ["UserName"] = "userName" };
+                        docxToPdf.Execute(docxStream, pdfStream, runProperties);
                         break;
                     }
                 }
