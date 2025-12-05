@@ -1,0 +1,14 @@
+namespace dotapiBase.Common.ErrorOr;
+
+/// <summary>
+/// Error types.
+/// </summary>
+public enum ErrorType
+{
+    Failure,
+    Unexpected,
+    Validation,
+    Conflict,
+    NotFound,
+    Unauthorized,
+}

@@ -7,5 +7,6 @@
 
         public bool Fail { get { return !Success; } }
         public string ErrorMessage { get; set; } = string.Empty;
+        public string DownloadUrl { get; set; } = string.Empty;
     }
 }

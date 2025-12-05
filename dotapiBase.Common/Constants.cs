@@ -1,10 +1,10 @@
-﻿namespace dotapiBase.Common
+﻿namespace dotapiBase.Common;
+
+public static class Constants
 {
-    public static class Constants
+    public enum WebKey
     {
-        public enum WebKey
-        {
-            AuthSetting
-        }
+        AuthSetting
     }
+    public const string DefaultTarget = "-";
 }

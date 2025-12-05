@@ -11,6 +11,8 @@
 
         public List<string> CmdFilePaths { get; set;} = new List<string>();
 
-        public List<string> OutFilePaths { get; set; } = new List<string>();    
+        public List<string> OutFilePaths { get; set; } = new List<string>();
+
+        public List<string> CmdTargets { get; set; } = new List<string>();
     }
 }

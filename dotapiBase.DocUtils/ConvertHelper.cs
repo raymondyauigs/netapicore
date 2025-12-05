@@ -4,6 +4,7 @@
 
 
 using BootlegRealists.Reporting;
+using dotapiBase.Common.ErrorOr;
 
 namespace dotapiBase.DocUtils
 {
@@ -17,7 +18,7 @@ namespace dotapiBase.DocUtils
 
         }
 
-        public bool Convert(string cmdfile,out string error)
+        public ErrorOr<string> Convert(string cmdfile,out string error)
         {
             var cmdinout = new string[] { }.ToList();
             error = string.Empty;
@@ -43,12 +44,12 @@ namespace dotapiBase.DocUtils
 
               
 
-                return true;
+                return cmdinout[1];
             }
             catch(Exception ex)
             {
                 error = ex.Message;
-                return false;
+                return Error.Failure(description: $"try execute conversion for value {string.Join(",", cmdinout)} and get error: {ex.Message}");
             }
         }
     }
